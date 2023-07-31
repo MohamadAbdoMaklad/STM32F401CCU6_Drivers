@@ -78,3 +78,4 @@ void  RCC_voidPeripheralClk_APB2(BUS_PeripheralState_t Copy_State,BUS_Peripheral
 #define RCC_APB1RSTR (*((volatile U32 *)(RCC_BoundaryAddress + RCC_APB1RSTR_Offset)))
 #define RCC_APB2RSTR (*((volatile U32 *)(RCC_BoundaryAddress + RCC_APB2RSTR_Offset)))
 */
+JSDFKLhADSF h
