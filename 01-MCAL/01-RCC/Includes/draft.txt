@@ -1,0 +1,80 @@
+/*
+//AHB1 Peripherals
+typedef enum
+{
+    GPIOA = 0 + AHP1Shift,
+    GPIOB = 1 + AHP1Shift,
+    GPIOC = 2 + AHP1Shift,
+    GPIOD = 3 + AHP1Shift,
+    GPIOE = 4 + AHP1Shift,
+    GPIOH = 7 + AHP1Shift,
+    CRC = 12 + AHP1Shift,
+    DMA1 = 21 + AHP1Shift,
+    DMA2 = 22 + AHP1Shift
+} AHP1_Peripherals_t;
+
+// AHB2 Peripherals
+typedef enum
+{
+    OTGFS = 7 + AHP2Shift
+} AHP2_Peripherals_t;
+
+// APB1 Peripherals
+typedef enum
+{
+    TIMER2  = 0 + APB1Shift,
+    TIMER3  = 1 + APB1Shift,
+    TIMER4  = 2 + APB1Shift,
+    TIMER5  = 3 + APB1Shift,
+    WWDG    = 11 + APB1Shift,
+    SPI2    = 14 + APB1Shift,
+    SPI3    = 15 + APB1Shift,
+    USART2  = 17 + APB1Shift,
+    I2C1    = 21 + APB1Shift,
+    I2C2    = 22 + APB1Shift,
+    I2C3    = 23 + APB1Shift,
+    PWR     = 28 + APB1Shift
+} APB1_Peripherals_t;
+
+// APB2 Peripherals
+typedef enum
+{
+    TIMER1 = 0 + APB2Shift,
+    USART1 = 4 + APB2Shift,
+    USART6 = 5 + APB2Shift,
+    ADC1 = 8 + APB2Shift,
+    SDIO = 11 + APB2Shift,
+    SPI1 = 12 + APB2Shift,
+    SPI4 = 13 + APB2Shift,
+    SYSCFG = 14 + APB2Shift,
+    TIMER9 = 16 + APB2Shift,
+    TIMER10 = 17 + APB2Shift,
+    TIMER11 = 18 + APB2Shift
+} APB2_Peripherals_t;
+*/
+
+/*
+void  RCC_voidPeripheralClk_AHP1(BUS_PeripheralState_t Copy_State,BUS_PeripheralPowerMode_t Copy_PowerMode, AHP1_Peripherals_t Copy_Peripheral);
+void  RCC_voidPeripheralClk_AHP2(BUS_PeripheralState_t Copy_State,BUS_PeripheralPowerMode_t Copy_PowerMode, AHP2_Peripherals_t Copy_Peripheral);
+void  RCC_voidPeripheralClk_APB1(BUS_PeripheralState_t Copy_State,BUS_PeripheralPowerMode_t Copy_PowerMode, APB1_Peripherals_t Copy_Peripheral);
+void  RCC_voidPeripheralClk_APB2(BUS_PeripheralState_t Copy_State,BUS_PeripheralPowerMode_t Copy_PowerMode, APB2_Peripherals_t Copy_Peripheral);
+*/
+
+
+/*
+#define RCC_RC_Offset           0x00
+#define RCC_PLLCFGR_Offset      0x04
+#define RCC_CFGR_Offset         0x08
+#define RCC_AHB1ENR_Offset      0x30
+#define RCC_AHB2ENR_Offset      0x34
+#define RCC_APB1RSTR_Offset     0x40
+#define RCC_APB2RSTR_Offset     0x44
+
+#define RCC_RC       (*((volatile U32 *)(RCC_BoundaryAddress + RCC_RC_Offset      )))
+#define RCC_PLLCFGR  (*((volatile U32 *)(RCC_BoundaryAddress + RCC_PLLCFGR_Offset )))
+#define RCC_CFGR     (*((volatile U32 *)(RCC_BoundaryAddress + RCC_CFGR_Offset    )))
+#define RCC_AHB1ENR  (*((volatile U32 *)(RCC_BoundaryAddress + RCC_AHB1ENR_Offset )))
+#define RCC_AHB2ENR  (*((volatile U32 *)(RCC_BoundaryAddress + RCC_AHB2ENR_Offset )))
+#define RCC_APB1RSTR (*((volatile U32 *)(RCC_BoundaryAddress + RCC_APB1RSTR_Offset)))
+#define RCC_APB2RSTR (*((volatile U32 *)(RCC_BoundaryAddress + RCC_APB2RSTR_Offset)))
+*/
