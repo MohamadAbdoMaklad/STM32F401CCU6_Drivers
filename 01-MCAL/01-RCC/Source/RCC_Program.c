@@ -27,16 +27,7 @@ void RCC_voidHSI_Config(U8 Copy_TrimValue)
 {
     RCC_CC.RC.HSITRIN = Copy_TrimValue;
 }
-/************************************************************************************/
-/* Func. Name : RCC_voidHSE_Config                                                  */
-/* I/p Arguments :HSE_t Copy_HSESource (Crystal_Source=0 - RC_Source)               */
-/* Return : Nothing                                                                 */
-/* Desc. : This Api allows the user to configure High Speed Eexternal Clock Source  */
-/************************************************************************************/
-void RCC_voidHSE_Config(HSE_t Copy_HSESource)
-{
-    RCC_CC.RC.HSEBYP = Copy_HSESource;
-}
+
 /************************************************************************************/
 /* Func. Name : RCC_voidPLL_Config                                                  */
 /* I/p Arguments :U8 Copy_PLLM  Range(2 ≤ PLLM ≤ 63)                                */

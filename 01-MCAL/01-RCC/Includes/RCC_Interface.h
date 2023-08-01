@@ -91,13 +91,6 @@ typedef enum
 
 typedef enum
 {
-    Crystal_Source=0,
-    RC_Source
-
-}HSE_t;
-
-typedef enum
-{
     DisaplCSS=0,
     EnableCSS
 }CSS_State_t;
@@ -168,12 +161,10 @@ typedef enum
     APB_Division2=4,        //100
     APB_Division4=5,        //101
     APB_Division8=6,        //110
-    APB_Division16=7       //111
+    APB_Division16=7        //111
 }APB_Prescaler_t;
 //High Speed Internal Clock Configuration Function
 void RCC_voidHSI_Config(U8 Copy_TrimValue);
-//High Speed Eexternal Clock Configuration Function
-void RCC_voidHSE_Config(HSE_t Copy_HSESource);
 //PLL Clock Configuration Function
 void RCC_voidPLL_Config(U8 Copy_PLLM,U16 Copy_PLLN);
 void RCC_voidPLL_MainClock(PLLP_t Copy_PLLPValue);
