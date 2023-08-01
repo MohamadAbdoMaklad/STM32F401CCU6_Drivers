@@ -159,7 +159,7 @@ typedef enum
     AHP_Division64=12,       //1100
     AHP_Division128=13,      //1101
     AHP_Division256=14,      //1110
-    AHP_Division512=15      //1111
+    AHP_Division512=15       //1111
 }AHB_Prescaler_t;   
 typedef enum
 {
