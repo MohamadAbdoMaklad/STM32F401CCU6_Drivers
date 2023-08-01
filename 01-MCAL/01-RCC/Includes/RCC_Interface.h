@@ -16,9 +16,10 @@
 //Clock Source Options
 typedef enum
 {
-    HSI=0,  //00
-    HSE=1,  //01
-    PLL=2   //10
+    HSI=0,      //00
+    HSE=1,      //01
+    PLL_HSI=2,  //10
+    PLL_HSE=3   //11
 }SystemClockSource_t;
 
 //Clock State Fot Buss Peripherals

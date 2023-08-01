@@ -87,12 +87,22 @@ void RCC_voidInitSysClk(SystemClockSource_t Clock_Source, CSS_State_t Copy_CSSSt
     {
     case HSI:
         RCC_CC.RC.HSION = STD_High;
+        RCC_CC.CFGR.SW_rw = Clock_Source;
         break;
     case HSE:
         RCC_CC.RC.HSEON = STD_High;
+        RCC_CC.CFGR.SW_rw = Clock_Source;
         break;
-    case PLL:
+    case PLL_HSI:
+        RCC_CC.RC.HSION = STD_High;
         RCC_CC.RC.PLLON = STD_High;
+        RCC_CC.PLLCFGR.PLLSRC = STD_Low;
+        RCC_CC.CFGR.SW_rw = Clock_Source;
+        break;
+    case PLL_HSE:
+        RCC_CC.RC.HSEON = STD_High;
+        RCC_CC.RC.PLLON = STD_High;
+        RCC_CC.PLLCFGR.PLLSRC = (Clock_Source>>1);
         break;
     };
     RCC_CC.CFGR.SW_rw = Clock_Source;
