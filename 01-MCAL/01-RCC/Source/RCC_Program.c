@@ -102,7 +102,8 @@ void RCC_voidInitSysClk(SystemClockSource_t Clock_Source, CSS_State_t Copy_CSSSt
     case PLL_HSE:
         RCC_CC.RC.HSEON = STD_High;
         RCC_CC.RC.PLLON = STD_High;
-        RCC_CC.PLLCFGR.PLLSRC = (Clock_Source - 1);
+        RCC_CC.PLLCFGR.PLLSRC = STD_High;
+        RCC_CC.CFGR.SW_rw = (Clock_Source - 1);
         break;
     };
     RCC_CC.RC.CSSON = Copy_CSSState;
