@@ -10,7 +10,14 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef GPIO_INTERFACE_H
-#define GPIO_INTERFACE_H
-
+#ifndef SysTick_INTERFACE_H
+#define SysTick_INTERFACE_H
+/*Options*/
+/*Functions*/
+void SysTick_voidInit(void);
+void SysTick_SetBusyWait(U32 Copy_TicksCount);
+void SysTick_SetIntervalSingle(U32 Copy_TicksCount ,void (*LPF)(void));
+void SysTick_SetIntervalPeriodic(U32 Copy_TicksCount ,void (*LPF)(void));
+void SysTick_voidGetElapsedTime(U32* ElapsedTime);
+void SysTick_voidGetRemainTime(U32* RemainTime);
 #endif // !RCC_INTERFACE_H

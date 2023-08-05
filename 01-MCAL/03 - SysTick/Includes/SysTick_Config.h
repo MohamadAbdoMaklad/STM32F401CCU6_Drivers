@@ -10,8 +10,8 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef GPIO_CONFIG_H
-#define GPIO_CONFIG_H
+#ifndef SysTick_CONFIG_H
+#define SysTick_CONFIG_H
 
 
 #endif // !RCC_CONFIG_H
