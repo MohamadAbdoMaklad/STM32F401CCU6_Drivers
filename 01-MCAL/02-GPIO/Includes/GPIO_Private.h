@@ -14,7 +14,6 @@
 #define GPIO_PRIVATE_H
 
 /*Register Definitions*/
-
 typedef struct
 {
     volatile U32 MODER;
@@ -36,4 +35,8 @@ typedef struct
 #define GPIOB (*((volatile GPIO_t *)GPIOB_BoundaryAddress))
 #define GPIOC (*((volatile GPIO_t *)GPIOC_BoundaryAddress))
 
+#define PinID_Bit1      (PinID * 2)
+#define PinID_Bit2      ((PinID * 2) + 1)
+#define AtomicRst_Bit   (1 << (PinID + 16))
+#define AtomicSet_Bit   (1 << PinID)
 #endif // !RCC_PRIVATE_H

@@ -16,7 +16,7 @@
 typedef enum
 {
     // Port A (0 To 15)
-    GPIO_A0 = 0,
+    GPIO_A0 = 0, // 0
     GPIO_A1,
     GPIO_A2,
     GPIO_A3,
@@ -31,9 +31,9 @@ typedef enum
     GPIO_A12,
     GPIO_A13,
     GPIO_A14,
-    GPIO_A15,
-    // Port B (0 To 15)
-    GPIO_B0,
+    GPIO_A15, // 15
+              //  Port B (0 To 15)
+    GPIO_B0, // 16
     GPIO_B1,
     GPIO_B2,
     GPIO_B3,
@@ -48,11 +48,11 @@ typedef enum
     GPIO_B12,
     GPIO_B13,
     GPIO_B14,
-    GPIO_B15,
-    // Port C (0 To 2)
-    GPIO_C13,
-    GPIO_C14,
-    GPIO_C15
+    GPIO_B15, // 31
+              //  Port C (13 To 15)
+    GPIO_C13 = 45, // 45
+    GPIO_C14 = 46,
+    GPIO_C15 = 47
 } GPIO_PINS_t;
 typedef enum
 {
@@ -91,11 +91,12 @@ typedef enum
     GPIO_HIGH
 } GPIO_PinValue_t;
 void GPIO_voidSetPinMode(GPIO_PINS_t Copy_PinID, GPIO_PinMode_t Copy_PinMode);
-void GPIO_voidInputPinConfig(GPIO_InputPinMode_t Copy_InputPinMode);
-void GPIO_voidOutputPinConfig(GPIO_OutputPinMode_t Copy_OutputPinMode, GPIO_OutputPinSpeed_t Copy_OutputPinSpeed);
-void GPIO_voidSetPinValue(GPIO_PinValue_t Copy_PinValue);
-void GPIO_voidSetPinValueAtomicly(GPIO_PinValue_t Copy_PinValue);
-U8 GPIO_U8GetPinValue(GPIO_PINS_t Copy_PinID);
+void GPIO_voidInputPinConfig(GPIO_PINS_t Copy_PinID,GPIO_InputPinMode_t Copy_InputPinMode);
+
+void GPIO_voidOutputPinConfig(GPIO_PINS_t Copy_PinID,GPIO_OutputPinMode_t Copy_OutputPinMode, GPIO_OutputPinSpeed_t Copy_OutputPinSpeed);
+void GPIO_voidSetPinValue(GPIO_PINS_t Copy_PinID,GPIO_PinValue_t Copy_PinValue);
+void GPIO_voidSetPinValueAtomicly(GPIO_PINS_t Copy_PinID,GPIO_PinValue_t Copy_PinValue);
+GPIO_PinValue_t GPIO_U8GetPinValue(GPIO_PINS_t Copy_PinID);
 void GPIO_SetPortValue(GPIO_PORT_t Copy_PortID, U16 Copy_Value);
 void GPIO_SetPortValueAtomicly(GPIO_PORT_t Copy_PortID, U16 Copy_Value);
 
