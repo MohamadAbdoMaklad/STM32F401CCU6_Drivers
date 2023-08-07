@@ -14,7 +14,6 @@
 #define RCC_PRIVATE_H
 
 /*Register Definitions*/
-#define RCC_BoundaryAddress 0x40023800
 typedef struct
 {
     U32 HSION               : 1;
@@ -82,6 +81,8 @@ typedef struct
     volatile U32 APB2RLPENR;
     volatile U32 RCC_CC_RESERVED_4[10];
 } RCC_CC_t;
+
+#define RCC_BoundaryAddress 0x40023800
 #define RCC_CC (*((volatile RCC_CC_t *)RCC_BoundaryAddress))
 
 #endif // !RCC_PRIVATE_H
