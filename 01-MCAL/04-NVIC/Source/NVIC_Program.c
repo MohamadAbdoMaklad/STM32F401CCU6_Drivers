@@ -14,9 +14,9 @@
 #include "BIT_MATH.h"
 /*Lower Layer Includes*/
 /*Driver Files Includes*/
-#include "SysTick_Interface.h"
-#include "SysTick_Private.h"
-#include "SysTick_Config.h"
+#include "NVIC_Interface.h"
+#include "NVIC_Private.h"
+#include "NVIC_Config.h"
 /*Static Glopal Private Function*/
 static void (*GpF)(void) = NULL;
 /*Glopal Flag */
