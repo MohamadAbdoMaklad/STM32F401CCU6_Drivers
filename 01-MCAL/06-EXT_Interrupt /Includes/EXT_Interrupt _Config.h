@@ -10,10 +10,7 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef NVIV_INTERFACE_H
-#define NVIV_INTERFACE_H
-/*Options*/
+#ifndef EXT_Interrupt_CONFIG_H
+#define EXT_Interrupt_CONFIG_H
 
-/*Functions*/
-
-#endif // !NVIC_INTERFACE_H
+#endif // !EXT_Interrupt_CONFIG_H

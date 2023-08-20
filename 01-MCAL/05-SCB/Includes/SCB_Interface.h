@@ -10,10 +10,10 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef NVIV_INTERFACE_H
-#define NVIV_INTERFACE_H
+#ifndef ACB_INTERFACE_H
+#define ACB_INTERFACE_H
 /*Options*/
 
 /*Functions*/
 
-#endif // !NVIC_INTERFACE_H
+#endif // !SCB_INTERFACE_H
