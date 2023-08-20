@@ -54,10 +54,9 @@ void SysTick_SetBusyWait(U32 Copy_TicksCount)
     // Start SysTick
     SysTick.STK_CTRL.ENABLE = STD_High;
     // Stop SysTick Interrupt
-    SysTick.STK_CTRL.TICKINT = STD_Low;
+    // SysTick.STK_CTRL.TICKINT = STD_Low;
     // POLL On the Counter Flag
-    while (!SysTick.STK_CTRL.COUNTFLAG)
-        ;
+    while (!SysTick.STK_CTRL.COUNTFLAG);
     // Stop SysTick
     SysTick.STK_CTRL.ENABLE = STD_Low;
     // Relode With 0
