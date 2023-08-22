@@ -38,4 +38,6 @@ void SysTick_SetIntervalSingle(U32 Copy_TicksCount, void (*LPF)(void));
 void SysTick_SetIntervalPeriodic(U32 Copy_TicksCount, void (*LPF)(void));
 void SysTick_voidGetElapsedTime(U32 *ElapsedTime);
 void SysTick_voidGetRemainTime(U32 *RemainTime);
+void SysTick_voidDellayMS_16Mhz(U32 Copy_DelauTime_MS);
+void SysTick_voidDellayMS_FSysTickMhz(U32 Copy_DelauTime_MS,U8 Copy_SysTick_FMHz);
 #endif // !RCC_INTERFACE_H

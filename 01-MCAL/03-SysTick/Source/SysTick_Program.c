@@ -9,7 +9,7 @@
 /*Description           :                           */
 /****************************************************/
 /*LIB Includes*/
-#include <stdio.h>
+
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 /*Lower Layer Includes*/
@@ -54,7 +54,7 @@ void SysTick_SetBusyWait(U32 Copy_TicksCount)
     // Start SysTick
     SysTick.STK_CTRL.ENABLE = STD_High;
     // Stop SysTick Interrupt
-    // SysTick.STK_CTRL.TICKINT = STD_Low;
+    //SysTick.STK_CTRL.TICKINT = STD_Low;
     // POLL On the Counter Flag
     while (!SysTick.STK_CTRL.COUNTFLAG);
     // Stop SysTick
@@ -101,11 +101,20 @@ void SysTick_voidGetRemainTime(U32 *RemainTime)
 {
     *RemainTime = SysTick.STK_VAL.CURRENT;
 }
+void SysTick_voidDellayMS_16Mhz(U32 Copy_DelauTime_MS)
+{
+	for(U32 i = 0;i < Copy_DelauTime_MS;i++)
+		SysTick_SetBusyWait(16000);
+}
+void SysTick_voidDellayMS_FSysTickMhz(U32 Copy_DelauTime_MS,U8 Copy_SysTick_FMHz)
+{
+	for(U32 i = 0;i < Copy_DelauTime_MS;i++)
+			SysTick_SetBusyWait(Copy_SysTick_FMHz*1000);
+}
 
 /*SysTick Handler*/
 void SysTick_Handler()
 {
-    U8 Local_U8Temp = 0;
     if (INTERVAL_FLAG_MODA == SINGLE_INTERVAL)
     {
         // Stop SysTick
@@ -118,10 +127,11 @@ void SysTick_Handler()
         SysTick.STK_VAL.CURRENT = 0;
     }
     /*Execute Action to be done after the time passed*/
-    if (GpF != NULL)
+    if (GpF != 0)
     {
         GpF();
     }
     // Clear SysTick Flag (Cleard By Reading)
+    U8 Local_U8Temp = 0;
     Local_U8Temp = SysTick.STK_CTRL.COUNTFLAG;
 }
