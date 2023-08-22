@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "systick_interface.h": "c"
+        "systick_interface.h": "c",
+        "swc_interface.h": "c"
     }
 }
