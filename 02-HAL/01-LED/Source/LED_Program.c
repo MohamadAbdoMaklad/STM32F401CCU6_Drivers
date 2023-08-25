@@ -25,5 +25,5 @@ void LED_voidConfig(GPIO_PINS_t Copy_PinID,GPIO_OutputPinMode_t Copy_OutputPinMo
 }
 void LED_voidSetLED(GPIO_PINS_t Copy_PinID,LEDState_t Copy_State)
 {
-    GPIO_voidSetPinValue(Copy_PinID,Copy_State);
+    GPIO_voidSetPinValueAtomicly(Copy_PinID,Copy_State);
 }

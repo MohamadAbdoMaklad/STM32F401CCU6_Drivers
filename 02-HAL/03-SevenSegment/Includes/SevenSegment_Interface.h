@@ -15,5 +15,7 @@
 /*Options*/
 
 /*functions Prototypes*/
-
-#endif // !SWC_INTERFACE_H
+void SevenSegment_voidInit(void);
+void SevenSegment_voidDisplay(U8 Num);
+void SevenSegment_voidDisplay_With_Delay(U8 Num , U32 Delay);
+#endif // !SevenSegment_INTERFACE_H

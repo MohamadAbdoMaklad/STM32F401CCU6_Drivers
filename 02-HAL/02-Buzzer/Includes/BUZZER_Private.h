@@ -13,8 +13,8 @@
 #ifndef BUZZZER_PRIVATE_H
 #define BUZZZER_PRIVATE_H
 /*
-/*Register Definitions*/
-/*
+Register Definitions
+
 typedef struct
 {
     volatile U32 MODER;

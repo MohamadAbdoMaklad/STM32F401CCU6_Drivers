@@ -320,17 +320,18 @@ GPIO_PinValue_t GPIO_U8GetPinValue(GPIO_PINS_t Copy_PinID)
 {
     GPIO_PORT_t PortID = Copy_PinID / 16;
     GPIO_PINS_t PinID = Copy_PinID % 16;
-    GPIO_PinValue_t ReturnValue = GPIO_LOW;
+    U8 ReturnValue = 0;
     switch (PortID)
     {
+
     case GPIO_PortA:
-        ReturnValue = GetBit(GPIOA.IDR, PinID);
+    	ReturnValue = GetBit(GPIOA.IDR, PinID);
         break;
     case GPIO_PortB:
-        ReturnValue = GetBit(GPIOB.IDR, PinID);
+    	ReturnValue = GetBit(GPIOB.IDR, PinID);
         break;
     case GPIO_PortC:
-        ReturnValue = GetBit(GPIOC.IDR, PinID);
+    	ReturnValue = GetBit(GPIOC.IDR, PinID);
         break;
     }
     return ReturnValue;
@@ -340,13 +341,13 @@ void GPIO_SetPortValue(GPIO_PORT_t Copy_PortID, U16 Copy_Value)
     switch (Copy_PortID)
     {
     case GPIO_PortA:
-        *((U16 *)GPIOA.ODR) = Copy_Value;
+        *((U16 *)GPIOA.ODR) |= Copy_Value;
         break;
     case GPIO_PortB:
-        *((U16 *)GPIOB.ODR) = Copy_Value;
+        *((U16 *)GPIOB.ODR) |= Copy_Value;
         break;
     case GPIO_PortC:
-        *((U16 *)GPIOC.ODR) = Copy_Value;
+        *((U16 *)GPIOC.ODR) |= Copy_Value;
         break;
     }
 }

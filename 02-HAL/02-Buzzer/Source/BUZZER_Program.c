@@ -23,7 +23,7 @@ void BUZZER_voidConfig(GPIO_PINS_t Copy_PinID,GPIO_OutputPinMode_t Copy_OutputPi
     GPIO_voidSetPinMode(Copy_PinID,GPIO_OUTPUT);
     GPIO_voidOutputPinConfig(Copy_PinID,Copy_OutputPinMode,Copy_OutputPinSpeed);
 }
-void BUZZER_voidSetLED(GPIO_PINS_t Copy_PinID,BUZZERState_t Copy_State)
+void BUZZER_voidSetBuzzer(GPIO_PINS_t Copy_PinID,BUZZERState_t Copy_State)
 {
-    GPIO_voidSetPinValue(Copy_PinID,Copy_State);
+    GPIO_voidSetPinValueAtomicly(Copy_PinID,Copy_State);
 }

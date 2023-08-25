@@ -44,7 +44,7 @@ void RCC_voidPLL_Config(U8 Copy_PLLM, U16 Copy_PLLN)
     }
     else
     {
-#warning "Invalid PLLM Value"
+
     }
 
     if (Copy_PLLN >= 192 && Copy_PLLN <= 432)
@@ -53,7 +53,7 @@ void RCC_voidPLL_Config(U8 Copy_PLLM, U16 Copy_PLLN)
     }
     else
     {
-#warning "Invalid PLLN Value"
+
     }
 }
 void RCC_voidPLL_MainClock(PLLP_t Copy_PLLPValue)
@@ -148,7 +148,7 @@ void voidRTC_HSEPrescaler(U8 Copy_Prescaler)
     }
     else
     {
-#warning "Invalid Prescaling Value"
+
     }
 }
 /************************************************************************/

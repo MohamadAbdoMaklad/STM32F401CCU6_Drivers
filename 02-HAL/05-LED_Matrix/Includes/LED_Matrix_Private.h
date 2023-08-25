@@ -10,11 +10,11 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef SEVENSEGMENT_PRIVATE_H
-#define SEVENSEGMENT_PRIVATE_H
+#ifndef SWC_PRIVATE_H
+#define SWC_PRIVATE_H
 /*
-Register Definitions
-
+/*Register Definitions*/
+/*
 typedef struct
 {
     volatile U32 MODER;
@@ -32,4 +32,4 @@ typedef struct
 SWC_BoundaryAddress     0x000000000
 #define GPIOA (*((volatile SWC_t *)SWC_BoundaryAddress))
 */
-#endif // !SevenSegment_PRIVATE_H
+#endif // !SWC_PRIVATE_H
