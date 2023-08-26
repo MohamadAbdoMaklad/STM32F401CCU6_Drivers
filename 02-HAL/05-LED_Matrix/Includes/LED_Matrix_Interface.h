@@ -10,10 +10,11 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef SWC_INTERFACE_H
-#define SWC_INTERFACE_H
+#ifndef LED_MATRIX_INTERFACE_H
+#define LED_MATRIX_INTERFACE_H
 /*Options*/
 
 /*functions Prototypes*/
-
+void LEDMATRIX_voidInit(void); // output pushpull
+void LEDMATRIX_voidDisplay(U8 *Copy_u8Frame) ;
 #endif // !SWC_INTERFACE_H

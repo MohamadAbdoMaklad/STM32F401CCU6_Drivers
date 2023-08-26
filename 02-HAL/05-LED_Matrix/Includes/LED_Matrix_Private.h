@@ -10,26 +10,8 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef SWC_PRIVATE_H
-#define SWC_PRIVATE_H
-/*
-/*Register Definitions*/
-/*
-typedef struct
-{
-    volatile U32 MODER;
-    volatile U32 OTYPER;
-    volatile U32 OSPEEDR;
-    volatile U32 PUPDR;
-    volatile U32 IDR;
-    volatile U32 ODR;
-    volatile U32 BSRR;
-    volatile U32 LCKR;
-    volatile U32 AFRL;
-    volatile U32 AFRH;
-} SWC_t;
-
-SWC_BoundaryAddress     0x000000000
-#define GPIOA (*((volatile SWC_t *)SWC_BoundaryAddress))
-*/
+#ifndef LED_MATRIX_PRIVATE_H
+#define LED_MATRIX_PRIVATE_H
+static void LEDMATRIX_voidDisableCols(void);
+static void LEDMATRIX_voidSetRowVlaues(U8 Copy_u8Frame);
 #endif // !SWC_PRIVATE_H
