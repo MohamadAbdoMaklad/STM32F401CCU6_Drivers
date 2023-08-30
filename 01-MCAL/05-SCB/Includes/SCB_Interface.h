@@ -23,5 +23,5 @@ typedef enum
 }NVIC_Grouping_t;
 /*Functions*/
 void SCB_voidNVICPriorityConfig(NVIC_Grouping_t Copy_PriorityOption);
-void SCB_voidNVIC_ExtPriorityConfig(U8 *Copy_PriorityArray);
+void SCB_voidNVIC_ArrIntPriority(U8 *Copy_PriorityArray);
 #endif // !SCB_INTERFACE_H

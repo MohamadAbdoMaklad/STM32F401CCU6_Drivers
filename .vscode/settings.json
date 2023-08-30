@@ -8,5 +8,5 @@
         "nvic_interface.h": "c",
         "nvic_private.h": "c"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "enabled"
 }

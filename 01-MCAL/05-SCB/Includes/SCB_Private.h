@@ -23,9 +23,26 @@ typedef struct
     U32 AIRCR_Reserved_1 :4;
     U32 ENDIANESS        :1;
     U32 VECTKEYSTAT      :16;
-
 }AIRCR_Bits;
-
+typedef struct
+{
+    U32 Val1:4;
+    U32 Val2:4;
+    U32 Val3:4;
+    U32 Val4:4;
+    U32 Val5:4;
+    U32 Val6:4;
+    U32 Notused:8;
+}StoreVal_t;
+typedef enum
+{
+    MemoryManagementFault = 0,
+    BusFault              = 4,
+    UsageFault            = 8,
+    SVCall                = 12,
+    PendSV                = 16,
+    SysTick               =20              
+}IntPariority_t;
 /*Register Definitions*/
 typedef struct
 {
@@ -50,14 +67,7 @@ typedef struct
 #define SCB (*((volatile SCB_t *)SCB_BoundaryAddress))
 /*Private Macros*/
 #define VECTKEY 0x5FA
-/*System fault handler priority fields Value*/
-enum
-{
-    MemoryManagementFault   =   GetRegBits(SCB.SHPR[0],4,0) ,
-    BusFault                =   GetRegBits(SCB.SHPR[0],4,8) ,
-    UsageFault              =   GetRegBits(SCB.SHPR[0],4,16),
-    SVCall                  =   GetRegBits(SCB.SHPR[1],4,24),
-    PendSV                  =   GetRegBits(SCB.SHPR[2],4,16),
-    SysTick                 =   GetRegBits(SCB.SHPR[2],4,24)
-};
+
+
+
 #endif // !SCB_PRIVATE_H

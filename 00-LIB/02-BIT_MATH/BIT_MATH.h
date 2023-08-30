@@ -18,4 +18,5 @@
 #define ClearRegBits(Reg,Bits,StartBit)             ((Reg)&=~(((1U<<(Bits))-1U)<<(StartBit)))
 #define ModRegBits(Reg,Bits,StartBit,NewValue)      ((Reg)=((Reg)&~(((1U<<(Bits))-1U)<<(StartBit)))|((NewValue)<<(StartBit)))
 //#define GetBit(Reg,BitNo)           (Reg & (1 << BitNo))
+//#define GetRegBits0(Reg,Bits,StartBit)              (Reg & (((1U<<(Bits))-1U)<<StartBit))
 #endif
