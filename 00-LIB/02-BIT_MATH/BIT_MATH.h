@@ -9,11 +9,12 @@
 #ifndef BIT_MATH_H
 #define BIT_MATH_H
 
-#define SetBit(Reg,BitNo)           (Reg |=(1<<BitNo))
-#define ClearBit(Reg,BitNo)         (Reg &=~(1<<BitNo))
-#define ToggleBit(Reg,BitNo)        (Reg ^=(1<<BitNo))
-#define GetBit(Reg,BitNo)           ((Reg>>BitNo)&1)
+#define SetBit(Reg,BitNo)           (Reg |=(1U<<BitNo))
+#define ClearBit(Reg,BitNo)         (Reg &=~(1U<<BitNo))
+#define ToggleBit(Reg,BitNo)        (Reg ^=(1U<<BitNo))
+#define GetBit(Reg,BitNo)           ((Reg>>BitNo)&1U)
 
+#define ClearRegBits(Reg,Bits,StartBit)             ((Reg)&=~(((1U<<(Bits))-1U)<<(StartBit)))
+#define ModRegBits(Reg,Bits,StartBit,NewValue)      ((Reg)=((Reg)&~(((1U<<(Bits))-1U)<<(StartBit)))|((NewValue)<<(StartBit)))
 //#define GetBit(Reg,BitNo)           (Reg & (1 << BitNo))
-//#define RegMask(Reg,Value,BitNo)    (Reg |=(Value<<BitNo))
 #endif
