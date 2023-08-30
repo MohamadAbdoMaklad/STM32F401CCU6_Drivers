@@ -35,3 +35,10 @@ void NVIC_voidPendingFlagState(VectTable_t Copy_PerIntId, State_t Copy_State)
         case Disable:NVIC.ICPR[Copy_PerIntId/32] = (1<<(Copy_PerIntId%32));break;
     };
 }
+void NVIC_voidSetPeriphiralPripority(VectTable_t Copy_PerIntId, U8 Copy_U8GroupId, U8 Copy_U8SubGroupId)
+{
+    NVIC.IPR[Copy_PerIntId] = ((Copy_U8SubGroupId|(Copy_U8GroupId<<(ActivePriorityOption-3)))<<4);
+    /*
+    U8 Local_U8Priority  = Copy_U8SubGroupId | (Copy_U8GroupId << (ActivePriorityOption - 3));
+    NVIC.IPR[Copy_PerIntId] = Local_U8Priority;*/
+}

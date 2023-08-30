@@ -25,6 +25,6 @@ void NVIC_voidPeriphiralState(VectTable_t Copy_PerIntId , State_t Copy_State);
 
 void NVIC_voidPendingFlagState(VectTable_t Copy_PerIntId, State_t Copy_State);
 
-void NVIC_voidSetPeriphiralPripority(VectTable_t Copy_PerIntId, U8 Copy_u8GroupId, U8 Copy_u8SubGroupId);
+void NVIC_voidSetPeriphiralPripority(VectTable_t Copy_PerIntId, U8 Copy_U8GroupId, U8 Copy_U8SubGroupId);
 
 #endif // !NVIC_INTERFACE_H
