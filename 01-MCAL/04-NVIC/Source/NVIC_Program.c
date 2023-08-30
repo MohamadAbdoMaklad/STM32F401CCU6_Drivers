@@ -17,6 +17,7 @@
 #include "NVIC_Config.h"
 #include "NVIC_Private.h"
 #include "NVIC_Interface.h"
+extern U8 ActivePriorityOption;
 /*Driver*/
 void NVIC_voidSetPeriphiralState(VectTable_t Copy_PerIntId , State_t Copy_State)
 {

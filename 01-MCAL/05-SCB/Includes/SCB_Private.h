@@ -35,11 +35,11 @@ typedef struct
     volatile AIRCR_Bits AIRCR;
     volatile U32 SCR;
     volatile U32 CCR;
-    volatile U32 SHPR1;
-    volatile U32 SHPR2;
-    volatile U32 SHPR2;
+    volatile U32 SHPR[3];
     volatile U32 SHCSR;
-    volatile U32 CFSR;
+    volatile U8 CFSR_MMFSR;
+    volatile U8 CFSR_BFSR;
+    volatile U16 CFSR_UFSR;
     volatile U32 HFSR;
     volatile U32 MMAR;
     volatile U32 BFAR;
@@ -50,4 +50,14 @@ typedef struct
 #define SCB (*((volatile SCB_t *)SCB_BoundaryAddress))
 /*Private Macros*/
 #define VECTKEY 0x5FA
+/*System fault handler priority fields Value*/
+enum
+{
+    MemoryManagementFault   =   GetRegBits(SCB.SHPR[0],4,0) ,
+    BusFault                =   GetRegBits(SCB.SHPR[0],4,8) ,
+    UsageFault              =   GetRegBits(SCB.SHPR[0],4,16),
+    SVCall                  =   GetRegBits(SCB.SHPR[1],4,24),
+    PendSV                  =   GetRegBits(SCB.SHPR[2],4,16),
+    SysTick                 =   GetRegBits(SCB.SHPR[2],4,24)
+};
 #endif // !SCB_PRIVATE_H

@@ -13,6 +13,7 @@
 #ifndef NVIV_INTERFACE_H
 #define NVIV_INTERFACE_H
 /*Options*/
+
 /*Function Like Macros*/
 #define NVIC_EnableIRQ(PerIntId)           (NVIC.ISER[PerIntId/32] = (1<<(PerIntId%32)))
 #define NVIC_DisableIRQ(PerIntId)          (NVIC.ICER[PerIntId/32] = (1<<(PerIntId%32)))

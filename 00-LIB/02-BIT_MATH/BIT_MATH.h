@@ -14,6 +14,7 @@
 #define ToggleBit(Reg,BitNo)        (Reg ^=(1U<<BitNo))
 #define GetBit(Reg,BitNo)           ((Reg>>BitNo)&1U)
 
+#define GetRegBits(Reg,Bits,StartBit)               (((Reg)>>(StartBit))&((1U<<(Bits))-1U))
 #define ClearRegBits(Reg,Bits,StartBit)             ((Reg)&=~(((1U<<(Bits))-1U)<<(StartBit)))
 #define ModRegBits(Reg,Bits,StartBit,NewValue)      ((Reg)=((Reg)&~(((1U<<(Bits))-1U)<<(StartBit)))|((NewValue)<<(StartBit)))
 //#define GetBit(Reg,BitNo)           (Reg & (1 << BitNo))
