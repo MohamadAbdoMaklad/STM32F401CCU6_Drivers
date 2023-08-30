@@ -13,5 +13,7 @@
 #define ClearBit(Reg,BitNo)         (Reg &=~(1<<BitNo))
 #define ToggleBit(Reg,BitNo)        (Reg ^=(1<<BitNo))
 #define GetBit(Reg,BitNo)           ((Reg>>BitNo)&1)
+
+//#define GetBit(Reg,BitNo)           (Reg & (1 << BitNo))
 //#define RegMask(Reg,Value,BitNo)    (Reg |=(Value<<BitNo))
 #endif
