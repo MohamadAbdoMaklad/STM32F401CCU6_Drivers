@@ -25,7 +25,16 @@ typedef enum
 	STD_Low = 0,
 	STD_High = 1,
 } STD_LevelTypes;
-
+typedef enum
+{
+	Disable=0,
+	Enable=1,
+}State_t;
+typedef enum
+{
+	Enable=0,
+	Disable=1,
+}ReversedState_t;
 #ifndef NULL
 #define NULL ((void *)0)
 #endif

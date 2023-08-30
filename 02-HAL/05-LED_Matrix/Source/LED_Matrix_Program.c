@@ -16,8 +16,8 @@
 #include "SysTick_Interface.h"
 /*Driver Files Includes*/
 #include "LED_Matrix_Interface.h"
-#include "LED_Matrix_Private.h"
 #include "LED_Matrix_Config.h"
+#include "LED_Matrix_Private.h"
 /*Driver*/
 /*Private Functions*/
 void LEDMATRIX_voidDisableCols(void)

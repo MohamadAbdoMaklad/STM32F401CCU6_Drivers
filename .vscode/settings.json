@@ -4,6 +4,7 @@
         "swc_interface.h": "c",
         "bit_math.h": "c",
         "std_types.h": "c",
-        "gpio_interface.h": "c"
+        "gpio_interface.h": "c",
+        "nvic_interface.h": "c"
     }
 }
