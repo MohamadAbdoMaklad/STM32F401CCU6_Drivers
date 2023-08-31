@@ -10,8 +10,8 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef EXT_Interrupt_INTERFACE_H
-#define EXT_Interrupt_INTERFACE_H
+#ifndef EXT_INTERRUPT_INTERFACE_H
+#define EXT_INTERRUPT_INTERFACE_H
 /*Options*/
 
 /*Functions*/

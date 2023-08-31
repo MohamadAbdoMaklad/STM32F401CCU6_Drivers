@@ -10,7 +10,7 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef EXT_Interrupt_CONFIG_H
-#define EXT_Interrupt_CONFIG_H
+#ifndef EXT_INTERRUPT_CONFIG_H
+#define EXT_INTERRUPT_CONFIG_H
 
 #endif // !EXT_Interrupt_CONFIG_H
