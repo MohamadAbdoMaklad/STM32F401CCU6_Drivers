@@ -31,8 +31,7 @@ void (*__EXTI__9 )(void) = NULL;
 void (*__EXTI__10)(void) = NULL;
 void (*__EXTI__11)(void) = NULL;
 void (*__EXTI__12)(void) = NULL;
-void (*__EXTI__13)(void) = NULL;
-void (*__EXTI__14)(void) = NULL;
+void (*__EXTI__13)(void) = NULL;void (*__EXTI__14)(void) = NULL;
 void (*__EXTI__15)(void) = NULL;
 /*Driver*/
 void EXTI_voidSetExtiLineEnable(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg)
