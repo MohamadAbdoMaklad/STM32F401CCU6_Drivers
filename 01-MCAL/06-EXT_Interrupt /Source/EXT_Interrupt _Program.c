@@ -136,7 +136,6 @@ void EXTI0_IRQHandler()
     {
         __EXTI__0();
         SET_BIT(ExtInt.PR, 0);
-        ClearExtFlag(0);
     }
 }
 void EXTI1_IRQHandler()
@@ -145,7 +144,6 @@ void EXTI1_IRQHandler()
     {
         __EXTI__1();
         SET_BIT(ExtInt.PR,1);
-        ClearExtFlag(1);
     }
 }
 void EXTI2_IRQHandler()
@@ -154,7 +152,6 @@ void EXTI2_IRQHandler()
     {
         __EXTI__2();
         SET_BIT(ExtInt.PR,2);
-        ClearExtFlag(2);
     }
 }
 void EXTI3_IRQHandler()
@@ -163,7 +160,6 @@ void EXTI3_IRQHandler()
     {
         __EXTI__3();
         SET_BIT(ExtInt.PR,3);
-        ClearExtFlag(3);
     }
 }
 void EXTI4_IRQHandler()
@@ -172,7 +168,6 @@ void EXTI4_IRQHandler()
     {
         __EXTI__4();
         SET_BIT(ExtInt.PR,4);
-        ClearExtFlag(4);
     }
 }
 
@@ -182,33 +177,28 @@ void EXTI9_5_IRQHandler()
     {
         __EXTI__5();
         SET_BIT(ExtInt.PR,5);
-        ClearExtFlag(5);
     }
 
     if ((__EXTI__6 != NULL)&&(GetExtFlag(6)==1))
     {
         __EXTI__6();
         SET_BIT(ExtInt.PR,6);
-        ClearExtFlag(6);
     }
 
     if ((__EXTI__7 != NULL)&&(GetExtFlag(7)==1))
     {
         __EXTI__7();
         SET_BIT(ExtInt.PR,7);
-        ClearExtFlag(7);
     }
     if ((__EXTI__8 != NULL)&&(GetExtFlag(8)==1))
     {
         __EXTI__8();
         SET_BIT(ExtInt.PR,8);
-        ClearExtFlag(8);
     }
     if ((__EXTI__9 != NULL)&&(GetExtFlag(9)==1))
     {
         __EXTI__9();
         SET_BIT(ExtInt.PR,9);
-        ClearExtFlag(9);
     }
 }
 
@@ -219,41 +209,35 @@ void EXTI15_10_IRQHandler()
     {
         __EXTI__10();
         SET_BIT(ExtInt.PR,10);
-        ClearExtFlag(10);
     }
 
     if ((__EXTI__11 != NULL)&&(GetExtFlag(11)==1))
     {
         __EXTI__11();
         SET_BIT(ExtInt.PR,11);
-        ClearExtFlag(11);
     }
 
     if ((__EXTI__12 != NULL)&&(GetExtFlag(12)==1))
     {
         __EXTI__12();
         SET_BIT(ExtInt.PR,12);
-        ClearExtFlag(12);
     }
 
     if ((__EXTI__13 != NULL)&&(GetExtFlag(13)==1))
     {
         __EXTI__13();
         SET_BIT(ExtInt.PR,13);
-        ClearExtFlag(13);
     }
 
     if ((__EXTI__14 != NULL)&&(GetExtFlag(14)==1))
     {
         __EXTI__14();
         SET_BIT(ExtInt.PR,14);
-        ClearExtFlag(14);
     }
 
     if ((__EXTI__15 != NULL)&&(GetExtFlag(15)==1))
     {
         __EXTI__15();
         SET_BIT(ExtInt.PR,15);
-        ClearExtFlag(15);
     }
 }
