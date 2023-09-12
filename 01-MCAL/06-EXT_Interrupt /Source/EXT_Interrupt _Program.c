@@ -34,6 +34,11 @@ void (*__EXTI__12)(void) = NULL;
 void (*__EXTI__13)(void) = NULL;
 void (*__EXTI__14)(void) = NULL;
 void (*__EXTI__15)(void) = NULL;
+
+U16 Externl_Interrupt_Flags = 0b0000000000000000;
+#define SetExtFlag(EXTno)   (Externl_Interrupt_Flags |=(1U<<EXTno))
+#define ClearExtFlag(EXTno)   (Externl_Interrupt_Flags &=~(1U<<EXTno))
+#define GetExtFlag(EXTno)     ((Externl_Interrupt_Flags>>EXTno)&1U)
 /*Driver*/
 void EXTI_voidSetExtiLineEnable(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg)
 {
@@ -127,129 +132,128 @@ void EXTI_voidSetCallBack(EXTI_Line_t Copy_LineId,void (*LpF)(void))
 /*External IRQHandlers*/
 void EXTI0_IRQHandler()
 {
-    if (__EXTI__0 != NULL)
+    if ((__EXTI__0 != NULL)&&(GetExtFlag(0)==1))
     {
         __EXTI__0();
         SET_BIT(ExtInt.PR, 0);
+        ClearExtFlag(0);
     }
 }
 void EXTI1_IRQHandler()
 {
-    if (__EXTI__1 != NULL)
+    if ((__EXTI__1 != NULL)&&(GetExtFlag(1)==1))
     {
         __EXTI__1();
         SET_BIT(ExtInt.PR,1);
+        ClearExtFlag(1);
     }
 }
 void EXTI2_IRQHandler()
 {
-    if (__EXTI__2 != NULL)
+    if ((__EXTI__2 != NULL)&&(GetExtFlag(2)==1))
     {
         __EXTI__2();
         SET_BIT(ExtInt.PR,2);
+        ClearExtFlag(2);
     }
 }
 void EXTI3_IRQHandler()
 {
-    if (__EXTI__3 != NULL)
+    if ((__EXTI__3 != NULL)&&(GetExtFlag(3)==1))
     {
         __EXTI__3();
         SET_BIT(ExtInt.PR,3);
+        ClearExtFlag(3);
     }
 }
 void EXTI4_IRQHandler()
 {
-    if (__EXTI__4 != NULL)
+    if ((__EXTI__4 != NULL)&&(GetExtFlag(4)==1))
     {
         __EXTI__4();
         SET_BIT(ExtInt.PR,4);
+        ClearExtFlag(4);
     }
 }
-void EXTI5_IRQHandler()
+
+void EXTI9_5_IRQHandler()
 {
-    if (__EXTI__5 != NULL)
+    if ((__EXTI__5 != NULL)&&(GetExtFlag(5)==1))
     {
         __EXTI__5();
         SET_BIT(ExtInt.PR,5);
+        ClearExtFlag(5);
     }
-}
-void EXTI6_IRQHandler()
-{
-    if (__EXTI__6 != NULL)
+
+    if ((__EXTI__6 != NULL)&&(GetExtFlag(6)==1))
     {
         __EXTI__6();
         SET_BIT(ExtInt.PR,6);
+        ClearExtFlag(6);
     }
-}
-void EXTI7_IRQHandler()
-{
-    if (__EXTI__7 != NULL)
+
+    if ((__EXTI__7 != NULL)&&(GetExtFlag(7)==1))
     {
         __EXTI__7();
         SET_BIT(ExtInt.PR,7);
+        ClearExtFlag(7);
     }
-}
-void EXTI8_IRQHandler()
-{
-    if (__EXTI__8 != NULL)
+    if ((__EXTI__8 != NULL)&&(GetExtFlag(8)==1))
     {
         __EXTI__8();
         SET_BIT(ExtInt.PR,8);
+        ClearExtFlag(8);
     }
-}
-void EXTI9_IRQHandler()
-{
-    if (__EXTI__9 != NULL)
+    if ((__EXTI__9 != NULL)&&(GetExtFlag(9)==1))
     {
         __EXTI__9();
         SET_BIT(ExtInt.PR,9);
+        ClearExtFlag(9);
     }
 }
-void EXTI10_IRQHandler()
+
+
+void EXTI15_10_IRQHandler()
 {
-    if (__EXTI__10 != NULL)
+    if ((__EXTI__10 != NULL)&&(GetExtFlag(10)==1))
     {
         __EXTI__10();
         SET_BIT(ExtInt.PR,10);
+        ClearExtFlag(10);
     }
-}
-void EXTI11_IRQHandler()
-{
-    if (__EXTI__11 != NULL)
+
+    if ((__EXTI__11 != NULL)&&(GetExtFlag(11)==1))
     {
         __EXTI__11();
         SET_BIT(ExtInt.PR,11);
+        ClearExtFlag(11);
     }
-}
-void EXTI12_IRQHandler()
-{
-    if (__EXTI__12 != NULL)
+
+    if ((__EXTI__12 != NULL)&&(GetExtFlag(12)==1))
     {
         __EXTI__12();
         SET_BIT(ExtInt.PR,12);
+        ClearExtFlag(12);
     }
-}
-void EXTI13_IRQHandler()
-{
-    if (__EXTI__13 != NULL)
+
+    if ((__EXTI__13 != NULL)&&(GetExtFlag(13)==1))
     {
         __EXTI__13();
         SET_BIT(ExtInt.PR,13);
+        ClearExtFlag(13);
     }
-}
-void EXTI14_IRQHandler()
-{
-    if (__EXTI__14 != NULL)
+
+    if ((__EXTI__14 != NULL)&&(GetExtFlag(14)==1))
     {
         __EXTI__14();
         SET_BIT(ExtInt.PR,14);
+        ClearExtFlag(14);
     }
-}
-void EXTI15_IRQHandler()
-{
-    if (__EXTI__15 != NULL)
+
+    if ((__EXTI__15 != NULL)&&(GetExtFlag(15)==1))
     {
         __EXTI__15();
         SET_BIT(ExtInt.PR,15);
+        ClearExtFlag(15);
     }
 }

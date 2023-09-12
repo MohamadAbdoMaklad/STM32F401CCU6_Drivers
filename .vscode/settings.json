@@ -6,7 +6,8 @@
         "std_types.h": "c",
         "gpio_interface.h": "c",
         "nvic_interface.h": "c",
-        "nvic_private.h": "c"
+        "nvic_private.h": "c",
+        "ext_interrupt_config.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

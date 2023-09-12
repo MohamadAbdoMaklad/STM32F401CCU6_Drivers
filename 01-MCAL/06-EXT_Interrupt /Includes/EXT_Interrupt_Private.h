@@ -27,16 +27,6 @@ typedef struct
 #define ExtInt (*((volatile EXT_Interrupt_t *)EXT_Interrupt_BoundaryAddress))
 
 /*Sysytem Configuratiion Related External Interrupts Registers*/
-/*
-typedef struct 
-{
-    Bits__0_3__     :4;
-    Bits__4_7__     :4;
-    Bits__8_11__    :4;
-    Bits__12_15__   :4;
-    SYSCFG_Reserved_0 :16;    
-}EXTICR_Bits_t;
-*/
 typedef struct
 {
     volatile U32 MEMRMP;
