@@ -70,6 +70,10 @@ typedef enum
 }EXT_Trig_t;
 /*Functions*/
 
+#define SetExtFlag(EXTno)       (External_Interrupt_Flags |=(1U<<EXTno))
+#define ClearExtFlag(EXTno)     (External_Interrupt_Flags &=~(1U<<EXTno))
+#define GetExtFlag(EXTno)       ((External_Interrupt_Flags>>EXTno)&1U)
+
 void EXTI_voidSetExtiLineEnable(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg);
 void EXTI_voidSetExtiLineDisable(EXTI_Line_t Copy_LineId);
 void EXTI_voidSetSenseControl(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg);

@@ -39,4 +39,7 @@ typedef struct
 #define SYSCFG (*((volatile ESYSCFG_t *)SYSCFG_BoundaryAddress))
 /*Private Macros*/
 
+
+/*External Interrupts Flags*/
+U16 External_Interrupt_Flags = 0b0000000000000000;
 #endif // !EXT_Interrupt_PRIVATE_H

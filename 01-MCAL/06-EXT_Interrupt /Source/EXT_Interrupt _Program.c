@@ -35,10 +35,8 @@ void (*__EXTI__13)(void) = NULL;
 void (*__EXTI__14)(void) = NULL;
 void (*__EXTI__15)(void) = NULL;
 
-U16 Externl_Interrupt_Flags = 0b0000000000000000;
-#define SetExtFlag(EXTno)   (Externl_Interrupt_Flags |=(1U<<EXTno))
-#define ClearExtFlag(EXTno)   (Externl_Interrupt_Flags &=~(1U<<EXTno))
-#define GetExtFlag(EXTno)     ((Externl_Interrupt_Flags>>EXTno)&1U)
+
+
 /*Driver*/
 void EXTI_voidSetExtiLineEnable(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg)
 {
