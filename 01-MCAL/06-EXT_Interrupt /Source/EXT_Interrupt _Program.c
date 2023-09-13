@@ -18,6 +18,7 @@
 #include "EXT_Interrupt_Interface.h"
 #include "EXT_Interrupt_Config.h"
 /*pointer to Function*/
+/*
 void (*__EXTI__0 )(void) = NULL;
 void (*__EXTI__1 )(void) = NULL;
 void (*__EXTI__2 )(void) = NULL;
@@ -34,9 +35,9 @@ void (*__EXTI__12)(void) = NULL;
 void (*__EXTI__13)(void) = NULL;
 void (*__EXTI__14)(void) = NULL;
 void (*__EXTI__15)(void) = NULL;
+*/
 
-
-
+v_P2F_v EXTI[16] = {NULL};
 /*Driver*/
 void EXTI_voidSetExtiLineEnable(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg)
 {
@@ -104,6 +105,8 @@ void EXTI_voidSetSenseControl(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg)
 }
 void EXTI_voidSetCallBack(EXTI_Line_t Copy_LineId,void (*LpF)(void))
 {
+    EXTI[Copy_LineId/16] = LpF;
+    /*
     U8 EXTI_LineVal = Copy_LineId/16;
     switch (EXTI_LineVal)
     {
@@ -124,18 +127,26 @@ void EXTI_voidSetCallBack(EXTI_Line_t Copy_LineId,void (*LpF)(void))
     case 14:__EXTI__14 = LpF;break;
     case 15:__EXTI__15 = LpF;break;
     default: break;
-    };
+    };*/
 }
 
 /*External IRQHandlers*/
 void EXTI0_IRQHandler()
 {
+    if ((EXTI[0] != NULL)&&(GetExtFlag(0)==1))
+    {
+        EXTI[0]();
+        SET_BIT(ExtInt.PR, 0);
+    }
+    /*
     if ((__EXTI__0 != NULL)&&(GetExtFlag(0)==1))
     {
         __EXTI__0();
         SET_BIT(ExtInt.PR, 0);
-    }
+    }*/
 }
+
+/*
 void EXTI1_IRQHandler()
 {
     if ((__EXTI__1 != NULL)&&(GetExtFlag(1)==1))
@@ -239,3 +250,4 @@ void EXTI15_10_IRQHandler()
         SET_BIT(ExtInt.PR,15);
     }
 }
+*/

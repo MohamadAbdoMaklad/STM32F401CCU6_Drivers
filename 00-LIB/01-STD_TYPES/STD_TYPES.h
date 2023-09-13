@@ -20,6 +20,11 @@ typedef signed long int 	S32;
 typedef float 				F32;
 typedef double 				F64;
 
+typedef void (*v_P2F_v)(void);
+typedef U8   (*U8_P2F_v)(void);
+typedef U16  (*U16_P2F_v)(void);
+typedef U32  (*U32_P2F_v)(void);
+
 typedef enum
 {
 	STD_Low = 0,
