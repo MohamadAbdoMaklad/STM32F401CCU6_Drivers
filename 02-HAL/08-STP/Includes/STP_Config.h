@@ -10,7 +10,11 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef IR_PRIVATE_H
-#define IR_PRIVATE_H
+#ifndef STP_CONFIG_H
+#define STP_CONFIG_H
 
-#endif // !SWC_PRIVATE_H
+#define STP_SerialPin   GPIO_A0
+#define STP_SH_Clock    GPIO_A1
+#define STP_ST_Clock    GPIO_A2
+
+#endif

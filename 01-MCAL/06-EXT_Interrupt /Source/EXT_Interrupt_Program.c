@@ -36,7 +36,6 @@ void (*__EXTI__13)(void) = NULL;
 void (*__EXTI__14)(void) = NULL;
 void (*__EXTI__15)(void) = NULL;
 */
-
 v_P2F_v EXTI[16] = {NULL};
 /*Driver*/
 void EXTI_voidSetExtiLineEnable(EXTI_Line_t Copy_LineId,EXT_Trig_t Copy_Treg)
@@ -133,12 +132,12 @@ void EXTI_voidSetCallBack(EXTI_Line_t Copy_LineId,void (*LpF)(void))
 /*External IRQHandlers*/
 void EXTI0_IRQHandler()
 {
-    if ((EXTI[0] != NULL)&&(GetExtFlag(0)==1))
+    if ((EXTI[0] != NULL)/*&&(GetExtFlag(0)==1)*/)
     {
         EXTI[0]();
         SET_BIT(ExtInt.PR, 0);
     }
-    /*
+   /*
     if ((__EXTI__0 != NULL)&&(GetExtFlag(0)==1))
     {
         __EXTI__0();

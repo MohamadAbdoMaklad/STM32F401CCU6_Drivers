@@ -10,7 +10,10 @@
 /****************************************************/
 
 /*File Gard*/
-#ifndef IR_PRIVATE_H
-#define IR_PRIVATE_H
+#ifndef STP_INTERFACE_H
+#define STP_INTERFACE_H
+/*Options*/
 
-#endif // !SWC_PRIVATE_H
+/*functions Prototypes*/
+void voidSendData(U8 Copy_U8Data);
+#endif // !SWC_INTERFACE_H

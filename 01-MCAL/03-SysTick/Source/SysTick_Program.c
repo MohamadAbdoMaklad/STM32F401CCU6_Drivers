@@ -78,6 +78,18 @@ void SysTick_SetIntervalSingle(U32 Copy_TicksCount, void (*LPF)(void))
     // Start SysTick Interrupt
     SysTick.STK_CTRL.TICKINT = STD_High;
 }
+void SysTick_ReSetIntervalSingle(U32 Copy_TicksCount)
+{
+    // stop timer
+    SysTick.STK_LOAD.RELOAD = 0;
+    SysTick.STK_VAL.CURRENT = 0;
+    // Load the RELOAD With Value
+    SysTick.STK_LOAD.RELOAD = Copy_TicksCount;
+    // Start SysTick
+    SysTick.STK_CTRL.ENABLE = STD_High;
+    // Start SysTick Interrupt
+    SysTick.STK_CTRL.TICKINT = STD_High;
+}
 void SysTick_SetIntervalPeriodic(U32 Copy_TicksCount, void (*LPF)(void))
 {
     // Load the RELOAD With Value

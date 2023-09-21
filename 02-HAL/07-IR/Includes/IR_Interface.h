@@ -15,5 +15,7 @@
 /*Options*/
 
 /*functions Prototypes*/
-
+void IR_voidGetFrame(void);
+U8 IR_U8GetFrameData(void);
+U8 IR_U8GetDeviceID(void);
 #endif // !SWC_INTERFACE_H
