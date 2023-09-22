@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="tQxL739PueGyt6lbr35l" name="Arch">
-        <mxGraphModel dx="1066" dy="607" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1151" dy="595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -25,8 +25,8 @@
                 <mxCell id="11" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;" parent="1" vertex="1">
                     <mxGeometry x="560" y="390" width="230" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="Arm Cortex&lt;br&gt;M4 Core" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="360" y="442.5" width="100" height="35" as="geometry"/>
+                <mxCell id="12" value="Arm Cortex-M4&lt;br&gt;Core" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="347" y="443" width="150" height="35" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="590" y="442.5" width="47.5" height="35" as="geometry"/>
