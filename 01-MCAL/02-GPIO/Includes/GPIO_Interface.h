@@ -90,6 +90,26 @@ typedef enum
     GPIO_LOW = 0,
     GPIO_HIGH
 } GPIO_PinValue_t;
+typedef enum
+{
+    AF0  = 0 ,
+    AF1  = 1 ,
+    AF2  = 2 ,
+    AF3  = 3 ,
+    AF4  = 4 ,
+    AF5  = 5 ,
+    AF6  = 6 ,
+    AF7  = 7 ,
+    AF8  = 8 ,
+    AF9  = 9 ,
+    AF10 = 10,
+    AF11 = 11,
+    AF12 = 12,
+    AF13 = 13,
+    AF14 = 14,
+    AF15 = 15,
+    
+}GPIO_AltFunc_t;
 void GPIO_voidSetPinMode(GPIO_PINS_t Copy_PinID, GPIO_PinMode_t Copy_PinMode);
 void GPIO_voidInputPinConfig(GPIO_PINS_t Copy_PinID, GPIO_InputPinMode_t Copy_InputPinMode);
 void GPIO_voidOutputPinConfig(GPIO_PINS_t Copy_PinID, GPIO_OutputPinMode_t Copy_OutputPinMode, GPIO_OutputPinSpeed_t Copy_OutputPinSpeed);
@@ -98,5 +118,6 @@ void GPIO_voidSetPinValueAtomicly(GPIO_PINS_t Copy_PinID, GPIO_PinValue_t Copy_P
 GPIO_PinValue_t GPIO_U8GetPinValue(GPIO_PINS_t Copy_PinID);
 void GPIO_SetPortValue(GPIO_PORT_t Copy_PortID, U16 Copy_Value);
 void GPIO_SetPortValueAtomicly(GPIO_PORT_t Copy_PortID, U16 Copy_Value);
+void GPIO_voidSetPinUlternativeFunction(GPIO_PINS_t Copy_PinID,GPIO_AltFunc_t Copy_U8UltFunc);
 
 #endif // !GPIO_INTERFACE_H

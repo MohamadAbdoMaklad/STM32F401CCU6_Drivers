@@ -366,3 +366,26 @@ void GPIO_SetPortValueAtomicly(GPIO_PORT_t Copy_PortID, U16 Copy_Value)
         break;
     }
 }
+void GPIO_voidSetPinUlternativeFunction(GPIO_PINS_t Copy_PinID,GPIO_AltFunc_t Copy_U8UltFunc)
+{
+    GPIO_PORT_t PortID = Copy_PinID / 16;
+    GPIO_PINS_t PinID = Copy_PinID % 16;
+    if (PinID <= 7)
+    {
+        switch (PortID)
+        {
+        case GPIO_PortA:ModRegBits(GPIOA.AFRL,4,(4*PinID),Copy_U8UltFunc);break;
+        case GPIO_PortB:ModRegBits(GPIOB.AFRL,4,(4*PinID),Copy_U8UltFunc);break;
+        case GPIO_PortC:ModRegBits(GPIOC.AFRL,4,(4*PinID),Copy_U8UltFunc);break;
+        }
+    }
+    else if (PinID>7)
+    {
+        switch (PortID)
+        {
+        case GPIO_PortA:ModRegBits(GPIOA.AFRH,4,(4*PinID),Copy_U8UltFunc);break;
+        case GPIO_PortB:ModRegBits(GPIOB.AFRH,4,(4*PinID),Copy_U8UltFunc);break;
+        case GPIO_PortC:ModRegBits(GPIOC.AFRH,4,(4*PinID),Copy_U8UltFunc);break;
+        }   
+    }
+}
