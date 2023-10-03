@@ -17,14 +17,16 @@ typedef signed char 		S8;
 typedef signed short int 	S16;
 typedef signed long int 	S32;
 
-typedef float 				F32;
-typedef double 				F64;
+typedef float 			F32;
+typedef double 			F64;
 
+//pointers to functions types
 typedef void (*v_P2F_v)(void);
 typedef U8   (*U8_P2F_v)(void);
 typedef U16  (*U16_P2F_v)(void);
 typedef U32  (*U32_P2F_v)(void);
 
+// polian function
 typedef enum
 {
 	STD_Low = 0,
@@ -40,6 +42,8 @@ typedef enum
 	Enable=0,
 	Disable=1,
 }ReversedState_t;
+
+// Null def if not def
 #ifndef NULL
 #define NULL ((void *)0)
 #endif
