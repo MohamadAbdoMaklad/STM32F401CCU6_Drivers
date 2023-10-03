@@ -12,8 +12,38 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 /*Lower Layer Includes*/
+#include "RCC_Interface.h"
+#include "GPIO_Interface.h"
 /*Driver Files Includes*/
 #include "USART_Interface.h"
 #include "USART_Private.h"
 #include "USART_Config.h"
 /*Driver*/
+void USART_voidInit(void)
+{
+    RCC_voidPeripheralClk(USART1,EnablePeripheral,HighPowerMode);
+    GPIO_voidSetPinUlternativeFunction(GPIO_A9,AF7);
+    GPIO_voidSetPinUlternativeFunction(GPIO_A10,AF7);
+    USART.CR1.PCE = STD_Low;
+    USART.CR1.M = STD_Low;
+    USART.CR1.OVER8 = STD_Low;
+    USART.CR2.STOP = STD_Low;
+    USART.BRR = 0x341;
+    USART.CR1.UE = STD_High;
+}
+void USATR_voidTXDate(U8 Copy_U8Data)
+{
+    USART.CR1.TE = STD_High;
+    USART.DR = Copy_U8Data;
+    while(USART.SR.TC == 0);
+    USART.SR.TC = 0;
+}
+U8 USATR_U8RXDate(void)
+{
+    U32 Data =0;
+    USART.CR1.RE = STD_High;
+    Data = USART.DR;
+    while(USART.SR.RXNE == 0);
+    USART.SR.RXNE = 0;
+    return Data;
+}

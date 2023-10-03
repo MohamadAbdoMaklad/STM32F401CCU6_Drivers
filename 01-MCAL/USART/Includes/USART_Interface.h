@@ -15,5 +15,8 @@
 /*Options*/
 
 /*functions Prototypes*/
+void USART_voidInit(void);
+void USATR_voidTXDate(U8 Copy_U8Data);
+U8 USATR_U8RXDate(void);
 
 #endif // !SWC_INTERFACE_H

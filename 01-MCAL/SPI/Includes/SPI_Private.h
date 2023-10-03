@@ -12,24 +12,26 @@
 /*File Gard*/
 #ifndef SPI_PRIVATE_H
 #define SPI_PRIVATE_H
-/*
 /*Register Definitions*/
-/*
-typedef struct
+typedef struct 
 {
-    volatile U32 MODER;
-    volatile U32 OTYPER;
-    volatile U32 OSPEEDR;
-    volatile U32 PUPDR;
-    volatile U32 IDR;
-    volatile U32 ODR;
-    volatile U32 BSRR;
-    volatile U32 LCKR;
-    volatile U32 AFRL;
-    volatile U32 AFRH;
-} SWC_t;
+    volatile U32 CR1;
+    volatile U32 CR2;
+    volatile U32 SR;
+    volatile U32 DR;
+    volatile U32 CRCPR;
+    volatile U32 RXCRCR;
+    volatile U32 TXCRCR;
+    volatile U32 I2SCFGR;
+    volatile U32 I2SPR;
+}SPI_t;
 
-SWC_BoundaryAddress     0x000000000
-#define GPIOA (*((volatile SWC_t *)SWC_BoundaryAddress))
-*/
+#define SPI1_BoundaryAddress     0x40013000
+#define SPI2_BoundaryAddress     0x40003800
+#define SPI3_BoundaryAddress     0x40003C00
+#define SPI4_BoundaryAddress     0x40013400
+#define SPI1 (*((volatile SPI_t *)SPI1_BoundaryAddress))
+#define SPI2 (*((volatile SPI_t *)SPI2_BoundaryAddress))
+#define SPI3 (*((volatile SPI_t *)SPI3_BoundaryAddress))
+#define SPI4 (*((volatile SPI_t *)SPI4_BoundaryAddress))
 #endif // !SWC_PRIVATE_H
