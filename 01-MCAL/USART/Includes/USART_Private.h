@@ -12,7 +12,7 @@
 /*File Gard*/
 #ifndef USART_PRIVATE_H
 #define USART_PRIVATE_H
-/*
+
 /*Register Definitions*/
 typedef struct 
 {
@@ -58,7 +58,7 @@ typedef struct
     U32 LBDIE:1 ;
     U32 RESERVED_1:5 ;
     U32 STOP:2 ;
-    U32 RESERVED_1:18;
+    U32 RESERVED_2:18;
 }USART_CR2_t;
 
 typedef struct
