@@ -12,6 +12,7 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 /*Lower Layer Includes*/
+#include "RCC_Interface.h"
 #include "GPIO_Interface.h"
 /*Driver Files Includes*/
 #include "SPI_Interface.h"
@@ -20,6 +21,11 @@
 /*Driver*/
 void SPI_voidInit()
 {
+	RCC_voidPeripheralClk(SPI_1,EnablePeripheral,HighPowerMode);
+    GPIO_voidSetPinMode(GPIO_A7, GPIO_AltFunc);
+    GPIO_voidSetPinMode(GPIO_A5, GPIO_AltFunc);
+    GPIO_voidSetPinUlternativeFunction(GPIO_A7,AF5);
+    GPIO_voidSetPinUlternativeFunction(GPIO_A5,AF5);
     SPI1.CR1=0x00000347;
 }
 void SPI_voidTranceive(U8 Copy_u8DataToBeTransmitted, U8* DataToBeRecieved)
