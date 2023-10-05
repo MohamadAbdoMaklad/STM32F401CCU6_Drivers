@@ -15,5 +15,6 @@
 /*Options*/
 
 /*functions Prototypes*/
-
+void SPI_voidInit();
+void SPI_voidTranceive(U8 Copy_u8DataToBeTransmitted, U8* DataToBeRecieved);
 #endif // !SWC_INTERFACE_H
