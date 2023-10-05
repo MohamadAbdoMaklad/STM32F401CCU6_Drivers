@@ -13,6 +13,7 @@
 #ifndef TFT_PRIVATE_H
 #define TFT_PRIVATE_H
 
+
 static void Private_voidSendCmd(U8 Copy_u8Command);
 static void Private_voidSendData(U8 Copy_u8Data);
 static void Private_voidSendResetPulse(void);
