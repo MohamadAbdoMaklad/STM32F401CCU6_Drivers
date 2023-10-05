@@ -39,8 +39,8 @@ typedef enum
 }State_t;
 typedef enum
 {
-	Enable=0,
-	Disable=1,
+	RevEnable=0,
+	RevDisable=1,
 }ReversedState_t;
 
 // Null def if not def
